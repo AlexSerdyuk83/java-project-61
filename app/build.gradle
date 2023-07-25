@@ -1,5 +1,5 @@
 plugins {
-    id 'java'
+    id 'application'
 }
 
 group = 'hexlet.code'
@@ -14,10 +14,12 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
 
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(20))
-    }
+compileJava {
+    options.release = 20
+}
+
+application {
+    mainClass = 'hexlet.code.App'
 }
 
 test {
