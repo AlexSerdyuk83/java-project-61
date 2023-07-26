@@ -1,13 +1,11 @@
 package hexlet.code;
 
-import hexlet.code.games.EvenGame;
-
 import java.util.Scanner;
 
 import static hexlet.code.Greeting.makeGreeting;
 
 public class App {
-    static String[] games = {"1 - Greet", "2 - Even", "0 - Exit"};
+    static String[] games = {"1 - Greet", "2 - Even", "3 - Calc", "0 - Exit"};
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -19,22 +17,16 @@ public class App {
 
         System.out.print(Strings.chosenText);
 
-        String chosenGame = sc.next();
+        int chosenGame = sc.nextInt();
 
-        if (chosenGame.equals("0")) {
+        if (chosenGame == 0) {
             sc.close();
             return;
         }
 
         var userName = makeGreeting(sc);
 
-        switch (chosenGame) {
-            case "2":
-                EvenGame.even(userName, sc);
-                break;
-            default: // For case 1
-                break;
-        }
+        Engine.game(chosenGame, userName, sc);
 
         sc.close();
     }
