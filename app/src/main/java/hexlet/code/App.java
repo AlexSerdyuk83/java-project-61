@@ -5,12 +5,12 @@ import java.util.Scanner;
 import static hexlet.code.Greeting.makeGreeting;
 
 public class App {
-    static String[] games = {
+    private static final String[] GAMES = {
         "1 - Greet", "2 - Even", "3 - Calc", "4 - GCD", "5 - Progression", "6 - Prime", "0 - Exit"
     };
 
     public static String[] getGamesList() {
-        return games;
+        return GAMES;
     }
 
     public static void main(String[] args) {

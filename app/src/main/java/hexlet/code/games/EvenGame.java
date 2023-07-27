@@ -9,6 +9,8 @@ import static hexlet.code.Helpers.getGameStepCount;
 import java.util.Scanner;
 
 public class EvenGame {
+    static final int MIN = 1;
+    static final int MAX = 100;
     static boolean isEven(int number) {
         return number == 0;
     }
@@ -24,7 +26,7 @@ public class EvenGame {
         var counter = 0;
 
         while (i != 0) {
-            var taskNumber = getRandomNumber(1, 100);
+            var taskNumber = getRandomNumber(MIN, MAX);
             var taskEven = taskNumber % 2;
             var correctAnswer = getCorrectAnswer(taskEven);
 
@@ -43,6 +45,6 @@ public class EvenGame {
             i = stepResults[1];
         }
 
-        return counter == 3;
+        return counter == getGameStepCount();
     }
 }

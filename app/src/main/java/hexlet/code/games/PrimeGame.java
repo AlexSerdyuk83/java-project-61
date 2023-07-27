@@ -1,5 +1,6 @@
 package hexlet.code.games;
 
+import hexlet.code.Helpers;
 import hexlet.code.Strings;
 
 import java.util.Scanner;
@@ -9,6 +10,9 @@ import static hexlet.code.Helpers.getRandomNumber;
 import static hexlet.code.Helpers.getGameStepCount;
 
 public class PrimeGame {
+    static final int MIN = 1;
+    static final int MAX = 100;
+
     public static boolean isPrime(Integer number) {
         if (number < 2) {
             return false;
@@ -29,7 +33,7 @@ public class PrimeGame {
         var counter = 0;
 
         while (i != 0) {
-            var taskNumber = getRandomNumber(1, 100);
+            var taskNumber = getRandomNumber(MIN, MAX);
             var correctAnswer = isPrime(taskNumber) ? "yes" : "no";
 
             var text = String.format(Strings.getNumberQuestionText(), taskNumber);
@@ -47,6 +51,6 @@ public class PrimeGame {
             i = stepResults[1];
         }
 
-        return counter == 3;
+        return counter == Helpers.getGameStepCount();
     }
 }

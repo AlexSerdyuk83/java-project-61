@@ -6,6 +6,8 @@ import hexlet.code.Strings;
 import java.util.Scanner;
 
 public class GCDGame {
+    static final int MAX = 100;
+
     public static int getGcd(int n1, int n2) {
         if (n2 == 0) {
             return n1;
@@ -19,7 +21,7 @@ public class GCDGame {
         var counter = 0;
 
         while (i != 0) {
-            var taskNumbers = Helpers.getTaskValues(100);
+            var taskNumbers = Helpers.getTaskValues(MAX);
             var firstNumber = taskNumbers[0];
             var secondNumber = taskNumbers[1];
 
@@ -41,6 +43,6 @@ public class GCDGame {
             i = stepResults[1];
         }
 
-        return counter == 3;
+        return counter == Helpers.getGameStepCount();
     }
 }

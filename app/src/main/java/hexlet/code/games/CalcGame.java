@@ -7,7 +7,7 @@ import static hexlet.code.Helpers.getGameStepCount;
 import java.util.Scanner;
 
 public class CalcGame {
-    static String[] operators = {"+", "-", "*"};
+    private static final String[] OPERATORS = {"+", "-", "*"};
 
     public static int getSum(int firstNum, int secondNum) {
         return firstNum + secondNum;
@@ -40,7 +40,7 @@ public class CalcGame {
             var operationNumber = Helpers.getRandomNumber(0, 3);
             var firstNumber = taskNumbers[0];
             var secondNumber = taskNumbers[1];
-            var operator = operators[operationNumber];
+            var operator = OPERATORS[operationNumber];
 
             var taskText = String.format("%d %s %d", firstNumber, operator, secondNumber);
 
@@ -61,6 +61,6 @@ public class CalcGame {
             i = stepResults[1];
         }
 
-        return counter == 3;
+        return counter == getGameStepCount();
     }
 }

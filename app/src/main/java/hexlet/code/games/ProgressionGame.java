@@ -6,22 +6,24 @@ import hexlet.code.Strings;
 import java.util.Scanner;
 
 public class ProgressionGame {
-    static final int stepCoefficient = 0;
-    static final int startCoefficient = 1;
-    static final int startMax = 100;
-    static final int stepMax = 10;
-    static final int positionMax = 9;
+    static final int STEP_COEFFICIENT = 0;
+    static final int START_COEFFICIENT = 1;
+    static final int START_MAX = 100;
+    static final int STEP_MAX = 10;
+    static final int POSITION_MAX = 9;
+
+    static final int PROGRESSIVE_LEN = 11;
     public static String[] getProgression() {
-        var start = Helpers.getRandomNumber(startCoefficient, startMax);
-        var step = Helpers.getRandomNumber(startCoefficient, stepMax);
-        var random = Helpers.getRandomNumber(stepCoefficient, positionMax);
+        var start = Helpers.getRandomNumber(START_COEFFICIENT, START_MAX);
+        var step = Helpers.getRandomNumber(START_COEFFICIENT, STEP_MAX);
+        var random = Helpers.getRandomNumber(STEP_COEFFICIENT, POSITION_MAX);
         var position = random == 0 ? 1 : random;
 
         var acc = start;
         var progression = new StringBuilder(acc);
         String value = String.valueOf(acc);
 
-        for (var i = 1; i < 11; i++) {
+        for (var i = START_COEFFICIENT; i < PROGRESSIVE_LEN; i++) {
 
             if (i == position) {
                 progression.append(".. ");
@@ -62,6 +64,6 @@ public class ProgressionGame {
             i = stepResults[1];
         }
 
-        return counter == 3;
+        return counter == Helpers.getGameStepCount();
     }
 }
