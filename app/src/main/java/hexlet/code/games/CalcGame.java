@@ -7,6 +7,8 @@ import static hexlet.code.Helpers.getGameStepCount;
 import java.util.Scanner;
 
 public class CalcGame {
+    static final int MIN = 0;
+    static final int MAX = 3;
     private static final String[] OPERATORS = {"+", "-", "*"};
 
     public static int getSum(int firstNum, int secondNum) {
@@ -37,7 +39,7 @@ public class CalcGame {
 
         while (i != 0) {
             var taskNumbers = Helpers.getTaskValues();
-            var operationNumber = Helpers.getRandomNumber(0, 3);
+            var operationNumber = Helpers.getRandomNumber(MIN, MAX);
             var firstNumber = taskNumbers[0];
             var secondNumber = taskNumbers[1];
             var operator = OPERATORS[operationNumber];
