@@ -24,7 +24,7 @@ https://asciinema.org/a/9bsYRk5eEFmytK6kWy1ZwJfaF
 https://asciinema.org/a/auTs88SqKptrJpFmdIH6LFsQM
 
 ## Setup
-[git clone]([https://www.example.com](https://github.com/AlexSerdyuk83/java-project-61)https://github.com/AlexSerdyuk83/java-project-61)
+[git clone](https://www.example.com](https://github.com/AlexSerdyuk83/java-project-61)https://github.com/AlexSerdyuk83/java-project-61)
 
 ## Start game
 ### Run in terminal:
