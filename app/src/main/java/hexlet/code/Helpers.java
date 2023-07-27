@@ -7,6 +7,14 @@ public class Helpers {
         return (int) ((Math.random() + coefficient) * max);
     }
 
+    public static int[] getTaskValues(int max) {
+        return new int[]{getRandomNumber(1, max), getRandomNumber(1, max)};
+    }
+
+    public static int[] getTaskValues() {
+        return getTaskValues(10);
+    }
+
     public static int[] getGameStepResult(
             Scanner sc,
             String questionText,

@@ -2,30 +2,34 @@ package hexlet.code.games;
 
 import hexlet.code.Strings;
 
+import java.util.Scanner;
+
 import static hexlet.code.Helpers.getGameStepResult;
 import static hexlet.code.Helpers.getRandomNumber;
 
-import java.util.Scanner;
+public class PrimeGame {
+    public static boolean isPrime(Integer number) {
+        if (number < 2) {
+            return false;
+        }
 
-public class EvenGame {
-    static boolean isEven(int number) {
-        return number == 0;
+        for (int i = 2; i < number / 2; i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
     }
-
-    static String getCorrectAnswer(int number) {
-        return isEven(number) ? "yes" : "no";
-    }
-
     public static boolean game(String userName, Scanner sc) {
-        System.out.println(Strings.evenTaskTextText);
+        System.out.println(Strings.primeTaskText);
 
         var i = 3;
         var counter = 0;
 
         while (i != 0) {
             var taskNumber = getRandomNumber(1, 100);
-            var taskEven = taskNumber % 2;
-            var correctAnswer = getCorrectAnswer(taskEven);
+            var correctAnswer = isPrime(taskNumber) ? "yes" : "no";
 
             var text = String.format(Strings.numberQuestionText, taskNumber);
 

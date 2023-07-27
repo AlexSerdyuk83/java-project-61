@@ -14,4 +14,7 @@ public class Strings {
     public static String tryAgainText = "Let's try again, %s!";
     public static String evenTaskTextText = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     public static String calcTaskText = "What is the result of the expression?";
+    public static String gcdTaskText = "Find the greatest common divisor of given numbers.";
+    public static String progressionTaskText = "What number is missing in the progression?";
+    public static String primeTaskText = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 }

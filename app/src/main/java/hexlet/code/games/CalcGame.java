@@ -1,19 +1,12 @@
 package hexlet.code.games;
 
+import hexlet.code.Helpers;
 import hexlet.code.Strings;
 
 import java.util.Scanner;
 
-import static hexlet.code.Helpers.getGameStepResult;
-import static hexlet.code.Helpers.getRandomNumber;
-
 public class CalcGame {
     static String[] operators = {"+", "-", "*"};
-
-    public static int[] getTaskValues() {
-        int[] result = {getRandomNumber(1, 10), getRandomNumber(1, 10)};
-        return result;
-    }
 
     public static int getSum(int firstNum, int secondNum) {
         return firstNum + secondNum;
@@ -35,15 +28,15 @@ public class CalcGame {
         };
     }
 
-    public static boolean calc(String userName, Scanner sc) {
+    public static boolean game(String userName, Scanner sc) {
         System.out.println(Strings.calcTaskText);
 
         var i = 3;
         var counter = 0;
 
         while (i != 0) {
-            var taskNumbers = getTaskValues();
-            var operationNumber = getRandomNumber(0, 3);
+            var taskNumbers = Helpers.getTaskValues();
+            var operationNumber = Helpers.getRandomNumber(0, 3);
             var firstNumber = taskNumbers[0];
             var secondNumber = taskNumbers[1];
             var operator = operators[operationNumber];
@@ -54,7 +47,7 @@ public class CalcGame {
 
             var text = String.format(Strings.stringQuestionText, taskText);
 
-            var stepResults = getGameStepResult(
+            var stepResults = Helpers.getGameStepResult(
                     sc,
                     text,
                     counter,

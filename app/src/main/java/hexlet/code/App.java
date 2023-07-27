@@ -5,7 +5,10 @@ import java.util.Scanner;
 import static hexlet.code.Greeting.makeGreeting;
 
 public class App {
-    static String[] games = {"1 - Greet", "2 - Even", "3 - Calc", "0 - Exit"};
+    static String[] games = {
+        "1 - Greet", "2 - Even", "3 - Calc", "4 - GCD", "5 - Progression", "6 - Prime", "0 - Exit"
+    };
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
