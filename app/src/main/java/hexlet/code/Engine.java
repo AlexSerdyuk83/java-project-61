@@ -9,18 +9,24 @@ import hexlet.code.games.PrimeGame;
 import java.util.Scanner;
 
 public class Engine {
+    static final int evenGameNumber = 2;
+    static final int calcGameNumber = 3;
+    static final int gcdGameNumber = 4;
+    static final int progressGameNumber = 5;
+    static final int primeGameNumber = 6;
+
     public static void game(int gameNumber, String userName, Scanner sc) {
         boolean isWin = switch (gameNumber) {
-            case 2 -> EvenGame.game(userName, sc);
-            case 3 -> CalcGame.game(userName, sc);
-            case 4 -> GCDGame.game(userName, sc);
-            case 5 -> ProgressionGame.game(userName, sc);
-            case 6 -> PrimeGame.game(userName, sc);
+            case evenGameNumber -> EvenGame.game(userName, sc);
+            case calcGameNumber -> CalcGame.game(userName, sc);
+            case gcdGameNumber -> GCDGame.game(userName, sc);
+            case progressGameNumber -> ProgressionGame.game(userName, sc);
+            case primeGameNumber -> PrimeGame.game(userName, sc);
             default -> false; // For case 1
         };
 
         if (isWin) {
-            var resultText = String.format(Strings.congratulationsText, userName);
+            var resultText = String.format(Strings.getCongratulationsText(), userName);
             System.out.println(resultText);
         }
     }

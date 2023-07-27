@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import static hexlet.code.Helpers.getGameStepResult;
 import static hexlet.code.Helpers.getRandomNumber;
+import static hexlet.code.Helpers.getGameStepCount;
 
 public class PrimeGame {
     public static boolean isPrime(Integer number) {
@@ -22,16 +23,16 @@ public class PrimeGame {
         return true;
     }
     public static boolean game(String userName, Scanner sc) {
-        System.out.println(Strings.primeTaskText);
+        System.out.println(Strings.getPrimeTaskText());
 
-        var i = 3;
+        var i = getGameStepCount();
         var counter = 0;
 
         while (i != 0) {
             var taskNumber = getRandomNumber(1, 100);
             var correctAnswer = isPrime(taskNumber) ? "yes" : "no";
 
-            var text = String.format(Strings.numberQuestionText, taskNumber);
+            var text = String.format(Strings.getNumberQuestionText(), taskNumber);
 
             var stepResults = getGameStepResult(
                     sc,

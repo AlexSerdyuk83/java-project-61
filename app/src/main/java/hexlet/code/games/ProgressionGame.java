@@ -5,13 +5,16 @@ import hexlet.code.Strings;
 
 import java.util.Scanner;
 
-import static hexlet.code.Helpers.getGameStepResult;
-
 public class ProgressionGame {
+    static final int stepCoefficient = 0;
+    static final int startCoefficient = 1;
+    static final int startMax = 100;
+    static final int stepMax = 10;
+    static final int positionMax = 9;
     public static String[] getProgression() {
-        var start = Helpers.getRandomNumber(1, 100);
-        var step = Helpers.getRandomNumber(1, 10);
-        var random = Helpers.getRandomNumber(0, 9);
+        var start = Helpers.getRandomNumber(startCoefficient, startMax);
+        var step = Helpers.getRandomNumber(startCoefficient, stepMax);
+        var random = Helpers.getRandomNumber(stepCoefficient, positionMax);
         var position = random == 0 ? 1 : random;
 
         var acc = start;
@@ -34,9 +37,9 @@ public class ProgressionGame {
     }
 
     public static boolean game(String userName, Scanner sc) {
-        System.out.println(Strings.progressionTaskText);
+        System.out.println(Strings.getProgressionTaskText());
 
-        var i = 3;
+        var i = Helpers.getGameStepCount();
         var counter = 0;
 
         while (i != 0) {
@@ -44,9 +47,9 @@ public class ProgressionGame {
             var taskProgression = progressionData[0];
             var correctAnswer = progressionData[1];
 
-            var text = String.format(Strings.stringQuestionText, taskProgression);
+            var text = String.format(Strings.getStringQuestionText(), taskProgression);
 
-            var stepResults = getGameStepResult(
+            var stepResults = Helpers.getGameStepResult(
                     sc,
                     text,
                     counter,

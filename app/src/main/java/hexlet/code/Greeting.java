@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Greeting {
     public static String makeGreeting(Scanner sc) {
-        System.out.println(Strings.welcomeText);
-        System.out.print(Strings.getInputNameText);
+        System.out.println(Strings.getWelcomeText());
+        System.out.print(Strings.getInputNameText());
 
         String name = sc.next();
 

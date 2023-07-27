@@ -4,6 +4,7 @@ import hexlet.code.Strings;
 
 import static hexlet.code.Helpers.getGameStepResult;
 import static hexlet.code.Helpers.getRandomNumber;
+import static hexlet.code.Helpers.getGameStepCount;
 
 import java.util.Scanner;
 
@@ -17,9 +18,9 @@ public class EvenGame {
     }
 
     public static boolean game(String userName, Scanner sc) {
-        System.out.println(Strings.evenTaskTextText);
+        System.out.println(Strings.getEvenTaskText());
 
-        var i = 3;
+        var i = getGameStepCount();
         var counter = 0;
 
         while (i != 0) {
@@ -27,7 +28,7 @@ public class EvenGame {
             var taskEven = taskNumber % 2;
             var correctAnswer = getCorrectAnswer(taskEven);
 
-            var text = String.format(Strings.numberQuestionText, taskNumber);
+            var text = String.format(Strings.getNumberQuestionText(), taskNumber);
 
             var stepResults = getGameStepResult(
                     sc,

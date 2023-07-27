@@ -13,9 +13,9 @@ public class GCDGame {
         return getGcd(n2, n1 % n2);
     }
     public static boolean game(String userName, Scanner sc) {
-        System.out.println(Strings.gcdTaskText);
+        System.out.println(Strings.getGCDTaskText());
 
-        var i = 3;
+        var i = Helpers.getGameStepCount();
         var counter = 0;
 
         while (i != 0) {
@@ -27,7 +27,7 @@ public class GCDGame {
 
             String correctAnswer = String.valueOf(getGcd(firstNumber, secondNumber));
 
-            var text = String.format(Strings.stringQuestionText, taskText);
+            var text = String.format(Strings.getStringQuestionText(), taskText);
             var stepResults = Helpers.getGameStepResult(
                     sc,
                     text,

@@ -2,6 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.Helpers;
 import hexlet.code.Strings;
+import static hexlet.code.Helpers.getGameStepCount;
 
 import java.util.Scanner;
 
@@ -29,9 +30,9 @@ public class CalcGame {
     }
 
     public static boolean game(String userName, Scanner sc) {
-        System.out.println(Strings.calcTaskText);
+        System.out.println(Strings.getCalcTaskText());
 
-        var i = 3;
+        var i = getGameStepCount();
         var counter = 0;
 
         while (i != 0) {
@@ -45,7 +46,7 @@ public class CalcGame {
 
             String correctAnswer = String.valueOf(getResultValue(firstNumber, secondNumber, operationNumber));
 
-            var text = String.format(Strings.stringQuestionText, taskText);
+            var text = String.format(Strings.getStringQuestionText(), taskText);
 
             var stepResults = Helpers.getGameStepResult(
                     sc,
